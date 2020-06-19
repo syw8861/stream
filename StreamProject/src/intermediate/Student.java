@@ -1,9 +1,25 @@
 package intermediate;
 
-public class Student
+
+
+public class Student implements Comparable<Student>
 {
 	private String name;
 	private int score;
+	
+	@Override
+	public int compareTo(Student o)
+	{
+		// -1(음수)오름차순
+		// 1(양수) 내림차순
+		// 0아무거토아님
+//		return this.score - o.score;
+		return this.name.compareTo(o.name);
+	}
+	
+	public int getScore() {
+		return this.score;
+	}
 	
 	public Student(String name, int score)
 	{
